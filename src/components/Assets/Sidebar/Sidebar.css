@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #0A1D52;
+  --hover-bg-color: #f0f0f0;
+}
+
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 72px;
+  height: calc(100vh - 60px);
+  background-color: #fff;
+  border-right: 1px solid #e0e0e0;
+  transition: width 0.3s ease;
+  z-index: 1001;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-nav-all {
+  justify-content: space-between;
+}
+
+.sidebar.open {
+  width: 280px;
+  align-items: flex-start;
+  padding: 0 16px;
+}
+
+.sidebar-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+  /* Slightly adjusted since header is gone */
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.sidebar:not(.open) .sidebar-profile {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 16px;
+  width: 40px;
+}
+
+.profile-icon {
+  font-size: 32px;
+  color: var(--primary-color);
+  transition: font-size 0.3s ease;
+}
+
+.sidebar.open .profile-icon {
+  font-size: 64px;
+}
+
+.login-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 32px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.sidebar:not(.open) .sidebar-nav {
+  align-items: center;
+  padding: 0;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 8px 0;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.sidebar.open .sidebar-link {
+  justify-content: flex-start;
+  padding: 10px 12px;
+}
+
+.sidebar-link:hover {
+  background-color: var(--hover-bg-color);
+}
+
+.sidebar-link .nav-icon {
+  font-size: 26px;
+  min-width: 26px;
+  height: 26px;
+}

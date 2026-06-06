@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #0A1D52;
+}
+
+/* ── Page container ── */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  padding: 40px 20px 60px;
+  background-color: #fafafa;
+}
+
+/* ════════════════════════════
+   SLIDER
+════════════════════════════ */
+.hero-slider-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-slider-overflow {
+  overflow: hidden;
+  border-radius: 12px;
+  width: 100%;
+  cursor: grab;
+  user-select: none;
+}
+
+.hero-slider-overflow:active {
+  cursor: grabbing;
+}
+
+.hero-slider-track {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.hero-slide {
+  min-width: 100%;
+}
+
+.hero-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 60px 40px;
+  height: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.institution-logo {
+  width: 130px;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.hero-text-group {
+  font-family: Inter, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+
+.hero-text-group h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary-color);
+  font-family: sans-serif;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.hero-text-group p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #5c6b89;
+  letter-spacing: 0.5px;
+}
+
+/* ── Arrow buttons ── */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: #ffffff;
+  border: 1px solid #e0e5f0;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--primary-color);
+  font-size: 22px;
+  transition: background 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.hero-arrow:hover {
+  background: #f0f0f0;
+}
+
+.hero-arrow--left {
+  left: -18px;
+}
+
+.hero-arrow--right {
+  right: -18px;
+}
+
+.hero-arrow--disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* ── Pagination pills ── */
+.slider-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #e8e8e8;
+}
+
+.slider-pill {
+  height: 10px;
+  width: 10px;
+  border-radius: 20px;
+  background-color: #e0e5f0;
+  cursor: pointer;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.35s ease;
+}
+
+.slider-pill.active {
+  width: 70px;
+  background-color: #b0b8c9;
+}
+
+/* ════════════════════════════
+   DEPARTMENT TABS
+════════════════════════════ */
+.dept-tabs {
+  display: flex;
+  gap: 0;
+  margin-top: 36px;
+  width: 100%;
+  max-width: 960px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid var(--primary-color);
+}
+
+.dept-tab {
+  flex: 1;
+  padding: 12px 0;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: var(--primary-color);
+  border: none;
+  border-right: 2px solid var(--primary-color);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dept-tab:last-child {
+  border-right: none;
+}
+
+.dept-tab:hover:not(.dept-tab--active) {
+  background-color: #eef1f8;
+}
+
+.dept-tab--active {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* ════════════════════════════
+   SPORTS GRID
+════════════════════════════ */
+.sports-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-top: 4px;
+  width: 100%;
+  max-width: 960px;
+}
+
+/* ════════════════════════════
+   SPORTS GRID — UPDATED
+════════════════════════════ */
+
+.sport-card {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background-color: var(--primary-color);
+  border-radius: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  /* Added: center content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sport-card:hover {
+  transform: scale(1.02);
+  z-index: 1;
+}
+
+.sport-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* dark overlay so text is always readable */
+.sport-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(10, 29, 82, 0.75) 0%,
+      rgba(10, 29, 82, 0.25) 60%,
+      transparent 100%);
+  /* Added: ensure overlay doesn't block clicks */
+  pointer-events: none;
+}
+
+.sport-name {
+  /* Updated: centered and larger */
+  position: relative;
+  /* changed from absolute */
+  font-size: clamp(14px, 2.5vw, 22px);
+  /* responsive, fills card */
+  font-weight: 800;
+  color: #ffffff;
+  font-family: Inter, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  z-index: 2;
+  /* Optional: add padding so text doesn't touch edges */
+  padding: 8px;
+}
