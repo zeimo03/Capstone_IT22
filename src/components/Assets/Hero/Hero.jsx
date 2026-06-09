@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import './Hero.css';
 import SrcLogo from './SrcLogo.png';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import MatchesSection from '../MatchesSection/MatchesSection';
 
 const slides = [
   {
@@ -167,6 +168,7 @@ const Hero = () => {
           </div>
         ))}
       </div>
+      <MatchesSection />
     </div>
   );
 };
